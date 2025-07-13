@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Character Counter</title>
+</head>
+<body>
+  <script>
+    // Ask the user to input a string
+    let userInput = prompt("Enter a string:");
+
+    // Ask the user to input the character to search for
+    let charToFind = prompt("Enter the character you want to count:");
+
+    // Ask whether to consider letter case or not
+    let caseSensitive = confirm("Do you want to consider letter case? Click OK for YES, Cancel for NO.");
+
+    // Initialize count
+    let count = 0;
+
+    // If case-insensitive, convert both inputs to lower case
+    if (!caseSensitive) {
+      userInput = userInput.toLowerCase();
+      charToFind = charToFind.toLowerCase();
+    }
+
+    // Count occurrences
+    for (let i = 0; i < userInput.length; i++) {
+      if (userInput[i] === charToFind) {
+        count++;
+      }
+    }
+
+    // Display the result
+    alert(`The character "${charToFind}" appears ${count} time(s) in the string.`);
+  </script>
+</body>
+</html>
